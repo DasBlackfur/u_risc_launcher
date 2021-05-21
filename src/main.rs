@@ -7,14 +7,12 @@ fn main() {
     match args.get(1) {
         None => print_help(""),
         Some(command) => {match command.as_str() {
-            "run" => {}
-            "debug" => {}
+            "run" => {run::main(args)}
+            "debug" => {debug::main(args)}
             _ => {print_help("")}
         }}
     }
 }
-
-
 
 fn print_help(err: &str) {
     print!("{}", err);

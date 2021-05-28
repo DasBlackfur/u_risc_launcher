@@ -7,10 +7,10 @@ fn main() {
     match args.get(1) {
         None => print_help(""),
         Some(command) => {
-            let file = find_file(&args);
+            let mut file = find_file(&args);
             match command.as_str() {
             "run" => {run::main(args, file)}
-            "debug" => {run::main(args, file)}
+            "debug" => {debug::main(args, file)}
             _ => {print_help("")}
         }}
     }

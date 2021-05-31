@@ -1,6 +1,6 @@
 use crate::print_help;
 use std::fs::File;
-use std::io::{Read, Error};
+use std::io::Read;
 use u_risc_interpreter::Cpu;
 
 pub fn main(args: Vec<String>, mut file: File) {

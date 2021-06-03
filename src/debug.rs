@@ -2,6 +2,7 @@ use crate::print_help;
 use std::fs::File;
 use std::io::Read;
 use u_risc_interpreter::Cpu;
+use crate::devices::Terminal;
 
 pub fn main(args: Vec<String>, mut file: File) {
     let mut bin: [u8; 65535] = [0; 65535];

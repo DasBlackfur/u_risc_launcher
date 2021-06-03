@@ -2,6 +2,8 @@ use std::env;
 use std::fs::File;
 mod run;
 mod debug;
+mod devices;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     match args.get(1) {

@@ -18,5 +18,5 @@ pub fn main(args: Vec<String>, mut file: File) {
 }
 
 fn print_debug(state: CpuState) {
-    println!("Registers: \nA: {} B: {} C: {} D: {} \nUpcoming Instruction: {:?}", state.a, state.b, state.c, state.d, state.upcoming);
+    println!("Registers: \nA: {} B: {} X: {} S: {} \nUpcoming Instruction: {:?}", state.a, state.b, state.x, state.s, state.upcoming);
 }

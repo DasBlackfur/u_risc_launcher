@@ -1,7 +1,7 @@
 use crate::print_help;
 use std::fs::File;
 use std::io::Read;
-use u_risc_interpreter::Cpu;
+use u_risc_interpreter::{Cpu, CpuState};
 use crate::devices::Terminal;
 
 pub fn main(args: Vec<String>, mut file: File) {
@@ -11,4 +11,12 @@ pub fn main(args: Vec<String>, mut file: File) {
         Err(e) => {print_help(&format!("ERROR: error while reading specified file {}", e))}
     }
     let mut cpu = Cpu::new(bin, vec![]);
+    loop {
+        print_debug(cpu.debug());
+        cpu.tick();
+    }
+}
+
+fn print_debug(state: CpuState) {
+    println!("Registers: \nA: {} B: {} C: {} D: {} \nUpcoming Instruction: {:?}", state.a, state.b, state.c, state.d, state.upcoming);
 }

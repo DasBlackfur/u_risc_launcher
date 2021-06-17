@@ -40,7 +40,7 @@ jobs:
     - name: Release Build
       run: cargo build --release
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2.4.4
+      uses: actions/upload-artifact@v2.2.4
       with:
         name: U-RISC-Launcher
         path: target/release/u_risc_launcher

@@ -9,7 +9,7 @@ fn main() {
     match args.get(1) {
         None => print_help(""),
         Some(command) => {
-            let mut file = find_file(&args);
+            let file = find_file(&args);
             match command.as_str() {
             "run" => {run::main(args, file)}
             "debug" => {debug::main(args, file)}
@@ -25,7 +25,7 @@ fn print_help(err: &str) -> ! {
     std::process::exit(1)
 }
 
-fn find_file(args: &Vec<String>) -> File{
+fn find_file(args: &[String]) -> File{
     match args.get(2) {
         None => { print_help("ERROR: Please enter a filename after the command"); },
         Some(filename) => {

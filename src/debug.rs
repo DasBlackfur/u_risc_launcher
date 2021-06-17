@@ -1,8 +1,7 @@
 use crate::print_help;
 use std::fs::File;
-use std::io::{Read, Write};
+use std::io::Read;
 use u_risc_interpreter::{Cpu, CpuState};
-use crate::devices::Terminal;
 use std::io;
 
 pub fn main(args: Vec<String>, mut file: File) {

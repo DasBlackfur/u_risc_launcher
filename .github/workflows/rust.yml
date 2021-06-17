@@ -18,5 +18,14 @@ jobs:
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
-    - name: Rust-Fmt
+  rust-fmt:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Rustfmt
       run: rustfmt
+    - uses: zwaldowski/git-commit-action@v1
+      with:
+        commit_message: Rustfmt cleaned up the Code!

@@ -42,7 +42,7 @@ jobs:
     - name: Release Unstable
       uses: softprops/action-gh-release@v0.1.5
       with:
-        body: THIS IS UNSTABLE DO NOT USE IT!
+        body: THIS IS UNSTABLE DO NOT USE IT UNLESS YOU KNOW WHAT YOURE DOING!
         prerelease: true
         files: target/release/u_risc_launcher
       
